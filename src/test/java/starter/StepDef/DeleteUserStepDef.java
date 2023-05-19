@@ -9,8 +9,8 @@ public class DeleteUserStepDef {
     ReqresAPI reqresAPI;
 
     // DELETE UNSUCESSFULLY
-    @Given("Delete user with exceed id {word}")
-    public void deleteUserWithExceedId(String id) {
-        reqresAPI.deleteUserWithExceedId(id);
+    @Given("Delete user with invalid id {word}")
+    public void deleteUserWithInvalidId(String id) {
+        reqresAPI.deleteUserWithInvalidId(id);
     }
 }

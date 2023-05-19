@@ -45,6 +45,8 @@ public class ReqresAPI {
                 .pathParam("id", id);
     }
 
+
+    // TUGAS
     @Step("Get single users not found")
     public void getSingleUsersNotFound(int id) {
         SerenityRest.given()
@@ -72,14 +74,6 @@ public class ReqresAPI {
                 .body(json);
     }
 
-    @Step("Put Update User Unsuccessfully")
-    public void putUpdateUsersUnsuccessfully(int id, File json) {
-        SerenityRest.given()
-                .pathParam("id", id)
-                .contentType(ContentType.JSON)
-                .body(json);
-    }
-
     @Step("Post Login User Successfully")
     public void postLoginUserSuccessfully(File json) {
         SerenityRest.given().
@@ -94,9 +88,17 @@ public class ReqresAPI {
                 .body(json);
     }
 
-    @Step("Delete user with exceed id")
-    public void deleteUserWithExceedId(String id) {
+    @Step("Put Update User Unsuccessfully")
+    public void putUpdateUsersUnsuccessfully(int id, File json) {
         SerenityRest.given()
-                .pathParam("id", id);
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    @Step("Delete user with invalid id")
+    public void deleteUserWithInvalidId(String id) {
+        SerenityRest.given()
+                .pathParam(ReqresResponses.ID, id);
     }
 }
